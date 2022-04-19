@@ -3,12 +3,12 @@ import CreateElement from "./elementFactory";
 const homeContent = () => {
   const homeCard = CreateElement({
     typeElement: "div",
-    classElement: "card",
+    classElement: "card-home",
   });
 
   const cardBody = CreateElement({
     typeElement: "div",
-    classElement: "card-body",
+    classElement: "card-body-home",
   });
 
   const cardTitle = CreateElement({
