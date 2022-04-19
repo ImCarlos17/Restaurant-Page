@@ -150,3 +150,39 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.card-menu {
+  max-height: 30rem;
+  max-width: 25rem;
+  background: rgb(0, 0, 0, 0.5);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.5rem;
+  color: #fff;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.card-body-menu {
+  display: flex;
+}
+
+.container-img-menu {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1.5rem;
+}
+
+.card-menu h3 {
+  margin: 0;
+}
+
+.card-menu p {
+  margin-top: 0.5rem;
+}
