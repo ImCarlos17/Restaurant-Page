@@ -1,59 +1,78 @@
-import CreateElement from "./elementFactory";
+import indexModule from "../src/index";
 
-const menuContent = () => {
-  const menuCard1 = CreateElement({
-    typeElement: "div",
-    classElement: "card-menu",
-  });
+const main = indexModule.main;
 
-  const cardBody = CreateElement({
-    typeElement: "div",
-    classElement: "card-body-menu",
-  });
+const moduleMenu = () => {
+  const menuPizzas = [];
 
-  const containerImg = CreateElement({
-    typeElement: "div",
-    classElement: "container-img-menu",
-  });
+  function CreateMenu(name, ingredients, img) {
+    const pizza = { name, ingredients, img };
 
-  const img = CreateElement({
-    typeElement: "img",
-    classElement: "img-pizza",
-    sourceElement: "../src/img/pizza4.jpg",
-  });
+    menuPizzas.push(pizza);
+  }
 
-  const divCardText = CreateElement({
-    typeElement: "div",
-    classElement: "container-text-menu",
-  });
+  const pizzaNapolitana = CreateMenu(
+    "Napolitana",
+    "Jamon, doble queso, anchos y tocino",
+    "./img/pizza4.jpg"
+  );
 
-  const pizzaTitle = CreateElement({
-    typeElement: "h1",
-    contentElement: "4 Estaciones",
-  });
+  const estation = CreateMenu(
+    "4Estaciones",
+    " triple jamon, maiz, tocino,peperoni",
+    "./img/pizza4.jpg"
+  );
 
-  const titleIngredients = CreateElement({
-    typeElement: "h3",
-    contentElement: "4 Estaciones",
-  });
+  const homeSpecial = CreateMenu(
+    "Especial Code",
+    "Double: queso, jamon, tocino, anchoas",
+    "./img/pizza4.jpg"
+  );
 
-  const pizzaIngredients = CreateElement({
-    typeElement: "p",
-    contentElement:
-      "Pizza con tomate,doble queso,tocineta,jamon de pierna y maiz",
-  });
+  const renderPizza = (pizza) => {
+    const cardMenu = document.createElement("div");
+    cardMenu.classList.add("card-menu");
 
-  containerImg.appendChild(img);
-  divCardText.appendChild(pizzaTitle);
-  divCardText.appendChild(titleIngredients);
-  divCardText.appendChild(pizzaIngredients);
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body-menu");
 
-  cardBody.appendChild(containerImg);
-  cardBody.appendChild(divCardText);
+    const containerImg = document.createElement("div");
+    containerImg.classList.add("container-img-menu");
 
-  menuCard1.appendChild(cardBody);
+    const img = document.createElement("img");
+    img.classList.add("img-pizza");
+    img.setAttribute("src", pizza.img);
 
-  return menuCard1;
+    const divCardText = document.createElement("div");
+    divCardText.classList.add("container-text-menu");
+
+    const pizzaTitle = document.createElement("h1");
+    pizzaTitle.textContent = pizza.name;
+
+    const titleIngredients = document.createElement("h3");
+    titleIngredients.textContent = "Ingredients:";
+
+    const pizzaIngredients = document.createElement("p");
+    pizzaIngredients.textContent = pizza.ingredients;
+
+    containerImg.appendChild(img);
+    divCardText.appendChild(pizzaTitle);
+    divCardText.appendChild(titleIngredients);
+    divCardText.appendChild(pizzaIngredients);
+
+    cardBody.appendChild(containerImg);
+    cardBody.appendChild(divCardText);
+
+    cardMenu.appendChild(cardBody);
+
+    main.appendChild(cardMenu);
+  };
+
+  const renderMenu = () => {
+    menuPizzas.forEach((pizza) => renderPizza(pizza));
+  };
+
+  renderMenu();
 };
 
-export default menuContent;
+export default moduleMenu;
