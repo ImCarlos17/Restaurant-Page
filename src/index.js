@@ -153,14 +153,17 @@ const changeSectionMain = (e) => {
   main.innerText = " ";
 
   if (section == "Home") {
+    main.classList.remove("container-grid");
     main.appendChild(home);
   }
 
   if (section == "Menu") {
+    main.classList.add("container-grid");
     renderMenu(menu);
   }
 
   if (section == "Contact") {
+    main.classList.remove("container-grid");
     main.appendChild(contact);
   }
 };
