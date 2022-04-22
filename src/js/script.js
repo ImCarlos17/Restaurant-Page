@@ -1,6 +1,11 @@
 import "../css/style.css";
-import indexModule from "../index.js";
-import moduleMenu from "../menu";
+import { header, main, footer } from "../index.js";
+import { homeCard, changeContentHome } from "../home";
+import { dishesMenu } from "../menu";
+import { contactCard, changeContentContac } from "../contact";
 
-const renderIndex = indexModule;
-const renderMenu = moduleMenu();
+const contact = contactCard;
+const home = homeCard;
+const menu = dishesMenu;
+
+main.appendChild(home);
