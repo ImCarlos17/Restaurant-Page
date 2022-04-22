@@ -186,3 +186,15 @@ body {
 .card-menu p {
   margin-top: 0.5rem;
 }
+
+.container-grid {
+  box-sizing: border-box;
+  min-width: 100vw;
+  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 1rem;
+  padding-top: 4rem;
+  gap: 3rem;
+}
