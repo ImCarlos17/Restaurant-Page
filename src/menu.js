@@ -1,5 +1,3 @@
-import { main } from "../src/index";
-
 const dishesMenu = [];
 
 function CreateDish(name, ingredients, img) {
@@ -16,13 +14,31 @@ function createInitialDishes() {
   );
 
   const estation = CreateDish(
-    "4Estaciones",
+    "4Estation",
     " triple jamon, maiz, tocino,peperoni",
     "./img/pizza4.jpg"
   );
 
-  const homeSpecial = CreateDish(
-    "Especial Code",
+  const binary = CreateDish(
+    "Binary",
+    "Double: queso, jamon, tocino, anchoas",
+    "./img/pizza4.jpg"
+  );
+
+  const lonely = CreateDish(
+    "Lonely",
+    "Double: queso, jamon, tocino, anchoas",
+    "./img/pizza4.jpg"
+  );
+
+  const bigCode = CreateDish(
+    "Big-Code",
+    "Double: queso, jamon, tocino, anchoas",
+    "./img/pizza4.jpg"
+  );
+
+  const pixarela = CreateDish(
+    "Pixarela",
     "Double: queso, jamon, tocino, anchoas",
     "./img/pizza4.jpg"
   );
